@@ -1,0 +1,17 @@
+---
+bootstrap:
+  suite: bookworm
+  mirror: repo.conf
+  output: rootfs.tar.gz
+ostree:
+  config: debian-ostree-commit.yaml
+  args:
+    rootfs: rootfs.tar.gz
+    repo: ostree_repo
+    branch: debian/bookworm
+image:
+  config: debian-ostree-amd64.yaml
+  args:
+    rootfs: rootfs.tar.gz
+    disk: disk.img
+    
